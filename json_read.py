@@ -5,13 +5,13 @@ from itertools import chain
 
 
 def coint_in_json():
-    with open('newsafr.json') as news_json:
+    with open('newsafr.json', encoding='utf-8') as news_json:
         json_data = json.load(news_json)
     news = json_data['rss']['channel']['items']
     news_description = []
     for n_d in news:
         news_description.append(n_d['description'])
-    words_news = str(news_description).replace("['", '').split()
+    words_news = str(news_description).replace("['", '').lower().split()
     long_word = []
     for word in words_news:
         if len(word) > 6:

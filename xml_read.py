@@ -11,7 +11,7 @@ def coint_in_xml():
     news_description = []
     for n_d in items:
         news_description.append(n_d.find('description').text)
-    words_news = str(news_description).split()
+    words_news = str(news_description).lower().split()
     long_word = []
     for word in words_news:
         if len(word) > 6:
